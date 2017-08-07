@@ -7,7 +7,7 @@ import { Route, Switch } from "react-router-dom";
 
 import asyncComponent from "./AsyncComponent.js";
 
-const Homea = () => {
+const Home = () => {
     <div>
         <h2>This is the home aaa!</h2>
     </div>

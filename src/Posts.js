@@ -4,7 +4,7 @@ class Posts extends Component {
     const id = this.props.match.params.id
     return (
     <div>
-        <h2>This is the post section: {id}</h2>
+        <h2>This is the post section111: {id}</h2>
     </div>
     );
   }
