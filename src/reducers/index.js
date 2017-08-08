@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import appSection from './appSection';
 
-const starterApp = combineReducers({appSection});
+const starterApp = {appSection};
 
 
 

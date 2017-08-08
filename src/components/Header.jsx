@@ -8,7 +8,7 @@ const HeaderContainer = styled.div`
   flex-directon: row;
   justify-content: middle;
   align-items: center;
-  margin:1rem;
+  margin: 1rem;
 `;
 const Icon = styled.img`
   width: 8rem;
@@ -19,6 +19,7 @@ const Icon = styled.img`
 const Title = styled.span`
   font-size: 2.5rem;
   font-weight: bold;
+  margin: auto;
 `;
 
 class Header extends PureComponent {
@@ -26,7 +27,9 @@ class Header extends PureComponent {
     return (
       <HeaderContainer>
         <Icon src={icon} />
-        <Title>... .... ... the starter project bootstrapped with Create React App</Title>
+        <Title>
+          ... .... ... the starter project bootstrapped with Create React App
+        </Title>
       </HeaderContainer>
     );
   }

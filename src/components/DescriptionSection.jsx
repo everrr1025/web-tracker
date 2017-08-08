@@ -20,25 +20,13 @@ const Description = styled.span`
   margin:0 1rem;
 `;
 
-// const DescriptionSection = ({ match, location }) => {
-//   const name = match.params.name;
-//   const icon = location.icon;
-//   return (
-//     <SectionContainer>
-//       <Icon src={icon} />
-//       <Description>
-//         the description of {name}
-//       </Description>
-//     </SectionContainer>
-//   );
-// };
-const DescriptionSection = ({ app }) => {
+const DescriptionSection = ({ match, location }) => {
   
   return (
     <SectionContainer>
-      <Icon src={app.instance} />
+      <Icon src={location.state.icon} />
       <Description>
-        the description of {app.name}
+        the description of {location.state.name}
       </Description>
     </SectionContainer>
   );

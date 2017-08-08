@@ -1,11 +1,15 @@
 [include]
-.*/src/.*
 
 [ignore]
-.*/node_modules/styled-components/.*
+.*/node_modules
+.*/public
+.*/.vscode
+.*/build
+
 
 [libs]
-.*/flow-typed/.*
+./flow-typed/npm
+
 
 [options]
 
