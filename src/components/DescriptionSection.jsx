@@ -4,20 +4,22 @@ import styled from "styled-components";
 const SectionContainer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
-  padding: 1rem;
-  background-color:white;
+  background-color:#ffffff;
+  margin-top:1rem;
 `;
 
 const Icon = styled.img`
-  width: 4rem;
+  height:4rem;
   vertical-align: text-bottom;
 `;
 
-const Description = styled.span`
+const Description = styled.div`
+  height:4rem;
   font-size: 1.5rem;
   font-weight: bold;
-  margin:0 1rem;
+  padding:1rem;
+  
+  
 `;
 
 const DescriptionSection = ({ match, location }) => {
@@ -26,7 +28,7 @@ const DescriptionSection = ({ match, location }) => {
     <SectionContainer>
       <Icon src={location.state.icon} />
       <Description>
-        the description of {location.state.name}
+        Description of {location.state.name}
       </Description>
     </SectionContainer>
   );

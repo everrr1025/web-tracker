@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
-import { Link, Route, Switch} from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import facebook from "../resources/assets/facebook.svg";
@@ -9,6 +9,7 @@ import youtube from "../resources/assets/youtube.svg";
 import line from "../resources/assets/line.svg";
 import bebo from "../resources/assets/bebo.svg";
 import twitter from "../resources/assets/twitter.svg";
+import skype from "../resources/assets/skype.svg";
 
 import asyncComponent from "../utils/AsyncComponent";
 
@@ -17,54 +18,32 @@ const AppListContainer = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
 
-  padding: 1rem;
+  @media (min-width: 700px) {
+    width: initial;
+  }
 `;
 
 const Item = styled.div`
-  width: 8rem;
-  margin-right: 2rem;
+  min-width: 8rem;
+  width: 33.3%;
+  cursor: pointer;
+
+  @media (min-width: 700px) {
+    width: initial;
+  }
 `;
 
 const AsyncDescriptionSection = asyncComponent(() =>
   import("./DescriptionSection")
 );
-// class AppSection extends PureComponent {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       apps: [
-//         { name: "facebook", instance: facebook },
-//         { name: "youtube", instance: youtube },
-//         { name: "line", instance: line },
-//         { name: "bebo", instance: bebo },
-//         { name: "twitter", instance: twitter }
-//       ]
-//     };
-//   }
 
-//   render() {
-//     const showApps = apps => {
-//       return apps.map((app, index) => {
-//         return (
-//           <Item key={index}>
-//                <Link to={{pathname:`/apps/${app.name}`, icon:app.instance}} >
-//             <img src={app.instance} /></Link>
-//           </Item>
-//         );
-//       });
-//     };
-
-//     return (
-//       <AppSectionContainer>
-//         {showApps(this.state.apps)}
-//       </AppSectionContainer>
-//     );
-//   }          <Link to={{ pathname: `/apps/${app.name}`, icon: app.instance }}>
-// }
 const apps = [
   { name: "facebook", icon: facebook },
   { name: "youtube", icon: youtube },
+  { name: "skype", icon: skype },
   { name: "line", icon: line },
   { name: "bebo", icon: bebo },
   { name: "twitter", icon: twitter }
@@ -93,9 +72,9 @@ const AppSection = ({ showApp, onIconClick }) => {
       <AppListContainer>
         {showApps(apps)}
       </AppListContainer>
-      <Route path="/apps/:name" component={AsyncDescriptionSection} /> 
-     
-       {/* {showApp && <AsyncDescriptionSection app={showApp}/>}  */}
+      <Route path="/apps/:name" component={AsyncDescriptionSection} />
+
+      {/* {showApp && <AsyncDescriptionSection app={showApp}/>}  */}
     </div>
   );
 };
