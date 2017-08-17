@@ -11,7 +11,8 @@ import bebo from "../resources/assets/bebo.svg";
 import twitter from "../resources/assets/twitter.svg";
 import skype from "../resources/assets/skype.svg";
 
-import asyncComponent from "../utils/AsyncComponent";
+import myLoadable from "../utils/myLoadable";
+import media from "../utils/mediaHandler";
 
 const AppListContainer = styled.div`
   display: flex;
@@ -21,24 +22,18 @@ const AppListContainer = styled.div`
   flex-wrap: wrap;
   width: 100%;
 
-  @media (min-width: 700px) {
-    width: initial;
-  }
+  ${media.tablet`width: initial;`}
 `;
 
 const Item = styled.div`
-  min-width: 8rem;
   width: 33.3%;
   cursor: pointer;
-
-  @media (min-width: 700px) {
-    width: initial;
-  }
+  ${media.tablet`width: 8rem;`}
 `;
 
-const AsyncDescriptionSection = asyncComponent(() =>
-  import("./DescriptionSection")
-);
+const AsyncDescriptionSection = myLoadable({
+  loader: () => import("./DescriptionSection")
+});
 
 const apps = [
   { name: "facebook", icon: facebook },

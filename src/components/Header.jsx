@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, { PureComponent } from "react";
 
 import icon from "../resources/assets/pac-man.svg";
+import media from "../utils/mediaHandler.js";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -22,9 +23,7 @@ const Title = styled.span`
   padding: 1rem;
   background-color: #4da6ff;
 
-  @media (min-width: 700px) {
-    background-color: initial;
-  }
+  ${media.tablet`background-color: initial;`}
 `;
 
 class Header extends PureComponent {
