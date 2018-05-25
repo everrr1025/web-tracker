@@ -11,7 +11,6 @@ import {
   ConnectedRouter,
   routerReducer,
   routerMiddleware,
-  push
 } from "react-router-redux";
 import starterApp from "./reducers";
 import App from "./components/App";
